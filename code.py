@@ -1,14 +1,19 @@
 # Create a list with the first ten triangular numbers
 # (see https://oeis.org/A000217)
 
-L = [ for i in range(10)]
+L = [i*(i+1)/2 for i in range(10)]
 
 # Create a function to test if a number is prime
 def is_prime(n):
     """
     Test if ``n`` is a prime.
     """
-
+    for x in range(2,n):
+	if(n %x) == 0:
+	    print(n,"false");
+	    break;
+    else:
+	print(n,"true");
 # Tests
 # is_prime(2033) == False
 # is_prime(2039) == True
